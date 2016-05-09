@@ -1,0 +1,57 @@
+a {
+	text-decoration: none;
+}
+
+.row, .scroll {
+	height: 100%;
+}
+
+
+
+/* PREMIERE PAGE */
+
+.bg_01 {
+	background-image:url("../img/background01.jpg");
+	background-repeat: no-repeat;
+	background-position: 40% 15%;
+}
+
+.verticalAlign {
+	display: -webkit-inline-flex;
+	-webkit-align-items: center;
+}
+
+.blocPlacing {
+	background-color: #e05251;
+	line-height: 3vh;
+	border-radius: 2vh;
+}
+	.blockTitle {
+		line-height: 6vh;
+	}
+.iconSize {
+	font-size:10vh;
+}
+
+/*
+.rightBlock {
+	background-color: #e05251;
+	color: white;
+	height: 50%;
+	border-radius: 2vh;
+	margin-top: 20vh;
+
+}
+	.rightBlock-title {
+		line-height: 6vh;
+		position: absolute;
+    	top: 27vh;
+    	left: 33.2vh;
+	}
+	.iconLocation {
+		font-size: 8vh;
+		position: absolute;
+    	top: 58vh;
+    	left: 39vh;
+	}
+*/
