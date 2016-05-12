@@ -35,4 +35,8 @@ angular.module('starter', ['ionic'])
     })
 
     $urlRouterProvider.otherwise('/home')
+})
+
+.config(function($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position('bottom');
 });
