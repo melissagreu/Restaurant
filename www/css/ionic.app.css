@@ -33,6 +33,13 @@ $dark:                            #444 !default;
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: "Bebas";
+  src: url("../lib/ionic/fonts/BEBAS.TTF");
+  src: url("../lib/ionic/fonts/BEBAS.TTF") format("truetype"), url("../lib/ionic/fonts/Bebas.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .ion, .ionicons,
 .ion-alert:before,
 .ion-alert-circled:before,

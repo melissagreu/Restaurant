@@ -34,6 +34,15 @@ angular.module('starter', ['ionic'])
       templateUrl:'templates/about.html'
     })
 
+    $stateProvider.state('localisation',{
+        url:'/localisation',
+        templateUrl:'templates/localisation.html'
+    })
+    $stateProvider.state('resto1',{
+        url:'/resto1',
+        templateUrl:'templates/resto1.html'
+    })
+
     $urlRouterProvider.otherwise('/home')
 })
 

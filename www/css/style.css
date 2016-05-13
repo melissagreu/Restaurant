@@ -1,9 +1,53 @@
+/*HEADER*/
+.bar{
+	background-color:#e05251;
+	height: 13vh;
+}
+
+.has-header{
+	top: 13vh;
+}
+
+
+.bar .button{
+	color: white;
+}
+
+.bar .title{
+	color: white;
+	font-size: 23px;
+	top: 3vh;
+	font-family: 'Bebas';
+}
+
+
+
 a {
 	text-decoration: none;
 }
 
 .row, .scroll {
 	height: 100%;
+}
+
+.photoresto{
+	height: 47%;
+}
+
+.col img{
+	width:95%;
+	z-index: 1;
+	position: absolute;
+}
+
+.row p{
+	text-shadow: 2px 2px 5px #000000;
+	font-size: 15px;
+	z-index: 99;
+	color: white;
+	position:absolute;
+	margin-top: 50%;
+	margin-left: 5%;
 }
 
 
@@ -26,12 +70,13 @@ a {
 	line-height: 3vh;
 	border-radius: 2vh;
 }
-	.blockTitle {
-		line-height: 6vh;
-	}
+.blockTitle {
+	line-height: 6vh;
+}
 .iconSize {
 	font-size:10vh;
 }
+
 
 /*
 .rightBlock {
