@@ -1,6 +1,6 @@
 {
   "name": "AppliResto",
-  "app_id": "",
+  "app_id": "c47ceb12",
   "gulpStartupTasks": [
     "sass",
     "watch"

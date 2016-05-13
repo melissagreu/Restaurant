@@ -4,7 +4,6 @@ body{
 /*HEADER*/
 .bar{
 	background-color:#e05251;
-	height: 13vh;
 }
 
 .has-header{
@@ -18,8 +17,7 @@ body{
 
 .bar .title{
 	color: white;
-	font-size: 23px;
-	top: 3vh;
+	font-size: 20px;
 	font-family: 'Bebas';
 }
 
