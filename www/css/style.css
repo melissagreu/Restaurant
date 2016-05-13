@@ -1,3 +1,6 @@
+body{
+	font-family: "Avenir Next";
+}
 /*HEADER*/
 .bar{
 	background-color:#e05251;
@@ -30,24 +33,44 @@ a {
 	height: 100%;
 }
 
-.photoresto{
-	height: 47%;
+/*RESTO1*/
+
+.rowphoto{
+	height: 49%;
+	background:url('../img/takayala.png') no-repeat center ;
+	margin-top: 3%;
 }
 
-.col img{
-	width:95%;
-	z-index: 1;
-	position: absolute;
-}
-
-.row p{
+.adresse > p{
 	text-shadow: 2px 2px 5px #000000;
 	font-size: 15px;
-	z-index: 99;
 	color: white;
-	position:absolute;
-	margin-top: 50%;
 	margin-left: 5%;
+	margin-bottom: 0%;
+	position: absolute;
+	bottom: 0;
+}
+
+.adresse{
+	position: relative;
+}
+
+
+.note{
+	font-size: 25px;
+	margin-top: 5%;
+	color:#e05251;
+}
+
+.note > p{
+	border: 1px solid ;
+	width: 40%;
+	height: 6vh;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 1.5;
+
 }
 
 

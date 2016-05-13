@@ -43,7 +43,7 @@ angular.module('starter', ['ionic'])
         templateUrl:'templates/resto1.html'
     })
 
-    $urlRouterProvider.otherwise('/home')
+    $urlRouterProvider.otherwise('/localisation')
 })
 
 .config(function($ionicConfigProvider) {
