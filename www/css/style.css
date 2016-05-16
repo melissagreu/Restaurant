@@ -40,11 +40,12 @@ a {
 }
 
 .adresse > p{
-	text-shadow: 2px 2px 5px #000000;
-	font-size: 15px;
+	text-shadow: 0 0 0.2em #000, 0 0 0.2em #000,
+	0 0 0.2em #000, 0 0 0.2em #000, 0 0 0.2em #000 ;
+	font-size: 17px;
 	color: white;
 	margin-left: 5%;
-	margin-bottom: 0%;
+	margin-bottom: 3%;
 	position: absolute;
 	bottom: 0;
 }
@@ -55,20 +56,20 @@ a {
 
 
 .note{
-	font-size: 25px;
-	margin-top: 5%;
+	font-size: 18px;
 	color:#e05251;
 	height: 20%;
+	margin-top: 3%;
 }
 
 .note > p{
 	border: 1px solid ;
-	width: 40%;
-	height: 6vh;
+	width: 50%;
+	height: 5vh;
 	border-radius: 5px;
 	text-align: center;
 	margin: 0 auto;
-	line-height: 1.5;
+	line-height: 1.7;
 
 }
 
@@ -77,11 +78,40 @@ a {
 }
 
 .nomresto > h2{
-	margin-top: 4%;
+	margin-top: 10%;
 	font-family: 'Avenir Next Condensed';
-	font-size: 25px;
+	font-size: 27px;
 	color:#e05251;
 }
+
+.rowdescription{
+	height: 25%;
+}
+
+.description > p{
+	font-size: 15px;
+}
+
+.titremenu > h2{
+	font-family: 'Avenir Next Condensed';
+	font-size: 22px;
+	color:#e05251;
+}
+.titremenu > h3{
+	font-family: 'Avenir Next Condensed';
+	font-size: 18px;
+}
+
+/*
+.menuimage1{
+	width: 100%;
+	background-image: url("../img/jojo.jpg");
+}
+
+.rowslider{
+	height: 40%;
+}
+*/
 
 
 
@@ -133,3 +163,4 @@ a {
     	left: 39vh;
 	}
 */
+

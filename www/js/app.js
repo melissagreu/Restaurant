@@ -49,3 +49,4 @@ angular.module('starter', ['ionic'])
 .config(function($ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 });
+
