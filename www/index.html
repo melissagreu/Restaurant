@@ -30,8 +30,9 @@
 
         <ion-nav-back-button></ion-nav-back-button>
         <ion-nav-buttons side="left">
-          <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+            <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
         </ion-nav-buttons>
+
         <ion-nav-buttons side="right">
           <button class="button button-icon icon ion-ios-search-strong">
           </button>
@@ -44,10 +45,10 @@
     </ion-side-menu-content>
     <ion-side-menu side="left">
       <ion-list>
-        <ion-item>
+        <ion-item menu-close ui-sref="">
           Trouver des restaurants
         </ion-item>
-        <ion-item ui-serf="ambiance">
+        <ion-item menu-close ui-sref="ambiance">
           Ambiances
         </ion-item>
         <ion-item>
@@ -56,6 +57,8 @@
       </ion-list>
     </ion-side-menu>
   </ion-side-menus>
+
+
   <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAS3hsilNB1-imxTIWFgB7akGR0KQpzdtE&sensor=true"></script>
   </body>
 </html>
