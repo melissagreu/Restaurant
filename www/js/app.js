@@ -42,8 +42,12 @@ angular.module('starter', ['ionic'])
         url:'/resto1',
         templateUrl:'templates/resto1.html'
     })
+    $stateProvider.state('ambiance',{
+        url:'/ambiance',
+        templateUrl:'templates/ambiance.html'
+    })
 
-    $urlRouterProvider.otherwise('/localisation')
+    $urlRouterProvider.otherwise('/ambiance')
 })
 
 .config(function($ionicConfigProvider) {

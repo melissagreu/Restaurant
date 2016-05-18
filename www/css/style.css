@@ -6,10 +6,6 @@ body{
 	background-color:#e05251;
 }
 
-.has-header{
-	top: 13vh;
-}
-
 
 .bar .button{
 	color: white;
@@ -27,9 +23,7 @@ a {
 	text-decoration: none;
 }
 
-.row, .scroll {
-	height: 100%;
-}
+
 
 /*RESTO1*/
 

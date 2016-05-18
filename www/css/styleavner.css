@@ -1,0 +1,73 @@
+.burger {
+	background:url('../img/burger.jpeg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 5vh;
+}
+
+.sushi {
+	background:url('../img/sushi.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 5vh;
+}
+
+.gastronomique {
+	background:url('../img/gastronomie.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 2.5vh;
+}
+
+.italien {
+	background:url('../img/italien.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 5vh;
+}
+
+.chinois {
+	background:url('../img/nouilles.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 5vh;
+}
+
+.orientale {
+	background:url('../img/orientale.jpeg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 4.5vh;
+}
+
+.fastFood {
+	background:url('../img/fastfood.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 4.5vh;
+}
+
+.vegetarien {
+	background:url('../img/vegetarien.jpg') no-repeat center;
+	background-size: cover;
+	color: white;
+	height: 24vh;
+	font-size: 4vh;
+}
+
+.ambianceText {
+	margin-top: 9.5vh;
+    font-family: "Open Sans";
+    text-shadow: 0 0 5px black, 0 0 5px black;
+}
+
+.ambiancePad {
+	padding: 2px;
+}
