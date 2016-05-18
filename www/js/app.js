@@ -46,8 +46,12 @@ angular.module('starter', ['ionic'])
         url:'/ambiance',
         templateUrl:'templates/ambiance.html'
     })
+    $stateProvider.state('japonais',{
+        url:'/japonais',
+        templateUrl:'templates/japonais.html'
+    })
 
-    $urlRouterProvider.otherwise('/ambiance')
+    $urlRouterProvider.otherwise('/japonais')
 })
 
 .config(function($ionicConfigProvider) {
