@@ -1,8 +1,8 @@
 /*GLOBAL ATTRIBUT*/
 
-.policeTypo {
-    font-family: "Open Sans";
-}
+/*.policeTypo {*/
+    /*font-family: "Open Sans";*/
+/*}*/
 
 
 
@@ -20,13 +20,13 @@
 	background:url('../img/burger.jpeg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 5vh;
+	font-size: 4vh;
 }
 .sushi {
 	background:url('../img/sushi.jpg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 5vh;
+	font-size: 4vh;
 }
 .gastronomique {
 	background:url('../img/gastronomie.jpg') no-repeat center;
@@ -38,26 +38,26 @@
 	background:url('../img/italien.jpg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 5vh;
+	font-size: 4vh;
 }
 .chinois {
 	background:url('../img/nouilles.jpg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 5vh;
+	font-size: 4vh;
 }
 .orientale {
 	background:url('../img/orientale.jpeg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 4.5vh;
+	font-size: 4vh;
 }
 
 .fastFood {
 	background:url('../img/fastfood.jpg') no-repeat center;
 	background-size: cover;
 	height: 24vh;
-	font-size: 4.4vh;
+	font-size: 4vh;
 }
 
 .vegetarien {
@@ -104,6 +104,7 @@
         }
             .restaurantTitle {
                 text-shadow: 0 0 5px black, 0 0 5px black;
+                font-family: "Avenir Next Condensed";
             }
             .notePlace {
                 margin-top: 6px;
@@ -120,13 +121,14 @@
                     text-shadow: 0 0 5px black, 0 0 5px black;
                     border: 2px solid white;
                     padding: 0px 10px;
+                    font-family: "Avenir Next";
                 }
 
         .thirdRow {}
             .restoInfo {
                 font-size: 2.5vh;
                 margin: 0;
-                text-shadow: 0 0 5px black, 0 0 5px black;
+                text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
             }
             .marginInfo {
                 margin-left: 18px;
