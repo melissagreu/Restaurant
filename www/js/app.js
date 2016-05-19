@@ -51,7 +51,12 @@ var app = angular.module('starter', ['ionic'])
         url:'/japonais',
         templateUrl:'templates/japonais.html'
     })
-    $urlRouterProvider.otherwise('/map')
+
+    $stateProvider.state('map',{
+        url:'/map',
+        templateUrl:'templates/map.html'
+    })
+    $urlRouterProvider.otherwise('/home')
 })
 
 .config(function($ionicConfigProvider) {

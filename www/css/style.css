@@ -1,6 +1,13 @@
 body{
 	font-family: "Avenir Next";
 }
+
+/*Home*/
+
+.blockTitle{
+	font-family: Bebas;
+}
+
 /*HEADER*/
 .bar{
 	background-color:#e05251;
