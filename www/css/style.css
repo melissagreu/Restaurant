@@ -162,3 +162,54 @@ a {
 	}
 */
 
+/*INCRIPTION*/
+
+.inscription{
+	background: #e05251;
+}
+
+.logo{
+	margin-top: 20%;
+}
+
+
+.item-input{
+	height: 50px;
+	width: 80%;
+	border-radius: 40px;
+	margin-top: 3%;
+}
+
+.collogo > p{
+	font-family: Bebas;
+	color: white;
+	margin-top: 8%;
+	font-size: 25px;
+}
+
+.item > .icon{
+	font-size: 25px;
+}
+
+.list > .button{
+	margin-top: 5%;
+	width:150px;
+	background: #e05251;
+	border: solid 1px white;
+	color:white;
+}
+
+.lieninscription{
+	color:white;
+	font-size: 17px;
+	line-height: ;
+}
+
+/*LOGIN*/
+
+.connexion{
+	font-family: Bebas;
+	color: white;
+	margin-top: 15%;
+	font-size: 25px;
+}

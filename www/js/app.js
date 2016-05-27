@@ -56,7 +56,18 @@ var app = angular.module('starter', ['ionic'])
         url:'/map',
         templateUrl:'templates/map.html'
     })
-    $urlRouterProvider.otherwise('/home')
+
+    $stateProvider.state('login',{
+        url:'/login',
+        templateUrl:'templates/login.html'
+    })
+
+    $stateProvider.state('inscription',{
+        url:'/inscription',
+        templateUrl:'templates/inscription.html'
+    })
+
+    $urlRouterProvider.otherwise('/login')
 })
 
 .config(function($ionicConfigProvider) {
