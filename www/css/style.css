@@ -4,6 +4,10 @@ body{
 
 /*Home*/
 
+.homeRow {
+	height: 100%;
+}
+
 .blockTitle{
 	font-family: Bebas;
 }
@@ -41,7 +45,6 @@ a {
 .rowphoto{
 	height: 49%;
 	background:url('../img/takayala.png') no-repeat center ;
-	margin-top: 3%;
 }
 
 .adresse > p{
@@ -89,14 +92,12 @@ a {
 	color:#e05251;
 }
 
-.rowdescription{
-	height: 25%;
-}
-
 .description > p{
 	font-size: 15px;
 }
-
+.rowMenu {
+	margin-bottom: 2vh;
+}
 .titremenu > h2{
 	font-family: 'Avenir Next Condensed';
 	font-size: 22px;
@@ -107,11 +108,15 @@ a {
 	font-size: 18px;
 }
 
-.rowMenu{
-	height:80%;
+.planRow {
+	padding: 0;
 }
 
-
+.imgPlan {
+	background: url('../img/plan01.png');
+	background-size: cover;
+	height: 30vh;
+}
 
 /* PREMIERE PAGE */
 

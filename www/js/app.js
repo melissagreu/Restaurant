@@ -67,7 +67,7 @@ var app = angular.module('starter', ['ionic'])
         templateUrl:'templates/inscription.html'
     })
 
-    $urlRouterProvider.otherwise('/login')
+    $urlRouterProvider.otherwise('/resto1')
 })
 
 .config(function($ionicConfigProvider) {
