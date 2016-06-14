@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', ['ionic'])
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -59,39 +58,151 @@ var app = angular.module('starter', ['ionic'])
 
     $stateProvider.state('login',{
         url:'/login',
-        templateUrl:'templates/login.html'
+        templateUrl:'templates/login/login.html'
     })
 
     $stateProvider.state('inscription',{
         url:'/inscription',
-        templateUrl:'templates/inscription.html'
+        templateUrl:'templates/register/inscription.html'
     })
 
-    $urlRouterProvider.otherwise('/resto1')
+    $urlRouterProvider.otherwise('/home')
 })
 
 .config(function($ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 });
 
-app.controller("MapController", function($scope){
-   google.maps.event.addDomListener(window, "load", function() {
-       var myLatlng = new google.maps.LatLng(37.3000, -120.48333);
+app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, FURLR){
 
-       var mapOptions = {
-           center: myLatlng,
-           zoom: 13,
-           mapTypeId: google.maps.MapTypeId.ROADMAP
-       };
+    $scope.firebase = new Firebase(FURLR);
+    $scope.restos = {};
+    
+   /* $scope.firebase.on('value', function(snapshot) {
+        $scope.$apply();
+        $scope.restos = snapshot.val();
+        snapshot.forEach(function(data) {
+           console.log(data.val().Name);
+        });
 
-       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    });*/
 
-       navigator.geolocation.getCurrentPosition(function(pos) {
-            map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-       });
+    console.log($scope.restos);
 
-       $scope.map = map;
 
-   });
-});
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(48.8590507,2.3211163);
 
+        var mapOptions = {
+            center: myLatlng,
+            zoom: 11,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+            mapOptions);
+
+        //Marker + infowindow + angularjs compiled ng-click
+        var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
+        var compiled = $compile(contentString)($scope);
+
+        var infowindow = new google.maps.InfoWindow({
+            content: compiled[0]
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Uluru (Ayers Rock)'
+        });
+        $scope.firebase.on('value', function(snapshot) {
+            $scope.$apply();
+            $scope.restos = snapshot.val();
+            snapshot.forEach(function(data) {
+                var marker = new google.maps.Marker({
+                    position: {lat: data.val().latitude, lng: data.val().longitude},
+                    map: map,
+                    title: data.val().Name
+                });
+                var contentString = "<div><a ng-click='clickTest()'>"+data.val().Name+"</a></div>";
+                var compiled = $compile(contentString)($scope);
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: compiled[0]
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            });
+
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+
+        $scope.map = map;
+
+    };
+    initialize();
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    $scope.centerOnMe = function() {
+        if(!$scope.map) {
+            return;
+        }
+        $scope.loading = $ionicLoading.show({
+            content: 'Getting current location...',
+            showBackdrop: false
+        });
+        navigator.geolocation.getCurrentPosition(function(pos) {
+            $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+            $ionicLoading.hide();
+        }, function(error) {
+            alert('Unable to get location: ' + error.message);
+        });
+    };
+
+    $scope.addMarker = function () {
+        if(!$scope.map) {
+            return;
+        }
+        if ($scope.titleMarker == "") {
+            $scope.titled = "Pas de nom";
+        } else {
+            $scope.titled = $scope.titleMarker;
+        }
+        var myMarker = new google.maps.Marker({
+            position: $scope.map.getCenter(),
+            map: $scope.map,
+            animation: google.maps.Animation.DROP
+        });
+        $scope.firebase.push({
+            Name:$scope.titled,
+            type:$scope.restoType,
+            latitude:$scope.map.data.map.center.lat(),
+            longitude:$scope.map.data.map.center.lng()
+        });
+        $scope.titleMarker = "";
+        $scope.restoType = "Burger";
+    };
+
+    $scope.clickTest = function() {
+        alert('Example of infowindow with ng-click')
+    };
+
+    $scope.firebase.on('value', function(snapshot) {
+        $scope.$apply();
+        $scope.restos = snapshot.val();
+        snapshot.forEach(function(data) {
+            var marker = new google.maps.Marker({
+                position: {lat: data.val().latitude, lng: data.val().longitude},
+                map: map
+            });
+        });
+
+    });
+})
+
+.constant('FURL', 'https://apprest.firebaseio.com/')
+.constant('FURLR', 'https://apprest.firebaseio.com/restaurants/')

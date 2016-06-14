@@ -1,7 +1,24 @@
 <ion-view view-title="Map">
-    <ion-content ng-controller="MapController" scroll="false">
-
+    <ion-content ng-controller="MapController" scroll="false" ng-data="initialize()">
         <div id="map" data-tap-disabled="true"></div>
+        <ion-footer-bar class="bar-dark">
+            <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+            <select class="selectMap" ng-model="restoType">
+                <option>Japonais</option>
+                <option>Fast-Food</option>
+                <option selected>Burger</option>
+                <option>Vegetarien</option>
+                <option>Orientale</option>
+                <option>Italien</option>
+                <option>Gastronomique</option>
+            </select>
+            </label>
+            <label class="item item-input2">
+                <span class="input-label">Nom du marqueur</span>
+                <input type="text" ng-model="titleMarker">
+            </label>
+            <a ng-click="addMarker()" class="button button-icon icon ion-flag"></a>
+        </ion-footer-bar>
 
     </ion-content>
 </ion-view>
