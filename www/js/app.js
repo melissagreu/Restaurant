@@ -101,19 +101,6 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
         var map = new google.maps.Map(document.getElementById("map"),
             mapOptions);
 
-        //Marker + infowindow + angularjs compiled ng-click
-        var contentString = "<div><a>Paris</a></div>";
-        var compiled = $compile(contentString)($scope);
-
-        var infowindow = new google.maps.InfoWindow({
-            content: compiled[0]
-        });
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'Uluru (Ayers Rock)',
-        });
         $scope.firebase.on('value', function(snapshot) {
             $scope.$apply();
             $scope.restos = snapshot.val();
@@ -142,10 +129,6 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
                 });
             });
 
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
         });
 
         $scope.map = map;
