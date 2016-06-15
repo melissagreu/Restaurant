@@ -102,7 +102,7 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
             mapOptions);
 
         //Marker + infowindow + angularjs compiled ng-click
-        var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
+        var contentString = "<div><a>Paris</a></div>";
         var compiled = $compile(contentString)($scope);
 
         var infowindow = new google.maps.InfoWindow({
@@ -112,7 +112,7 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
         var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
-            title: 'Uluru (Ayers Rock)'
+            title: 'Uluru (Ayers Rock)',
         });
         $scope.firebase.on('value', function(snapshot) {
             $scope.$apply();
@@ -130,11 +130,9 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
                     var compiled = $compile(contentString)($scope);
                     
                 } else {
-                    var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().description+"</a></div>";
+                    var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().Name+"</a><p>"+data.val().description+"</p></div>";
                     var compiled = $compile(contentString)($scope);
                 }
-                var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().Name+"</a></div><p>"+data.val().description+"</p>";
-                var compiled = $compile(contentString)($scope);
 
                 var infowindow = new google.maps.InfoWindow({
                     content: compiled[0]
@@ -200,7 +198,7 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
     };
 
     $scope.clickTest = function() {
-        alert("C'est un de vos restaurant :)")
+        alert("Restaurant entré manuellement")
     };
 
 
