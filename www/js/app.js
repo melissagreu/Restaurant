@@ -123,7 +123,17 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
                     map: map,
                     title: data.val().Name
                 });
-                var contentString = "<div><a ng-click='clickTest()'>"+data.val().Name+"</a></div>";
+                console.log(data.val().url);
+                if(data.val().url === "")
+                {
+                    var contentString = "<div><p ng-click='clickTest()'>"+data.val().Name+"</p></div>";
+                    var compiled = $compile(contentString)($scope);
+                    
+                } else {
+                    var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().description+"</a></div>";
+                    var compiled = $compile(contentString)($scope);
+                }
+                var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().Name+"</a></div><p>"+data.val().description+"</p>";
                 var compiled = $compile(contentString)($scope);
 
                 var infowindow = new google.maps.InfoWindow({
@@ -181,15 +191,18 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
             Name:$scope.titled,
             type:$scope.restoType,
             latitude:$scope.map.data.map.center.lat(),
-            longitude:$scope.map.data.map.center.lng()
+            longitude:$scope.map.data.map.center.lng(),
+            url: "",
+            description: ""
         });
         $scope.titleMarker = "";
         $scope.restoType = "Burger";
     };
 
     $scope.clickTest = function() {
-        alert('Example of infowindow with ng-click')
+        alert("C'est un de vos restaurant :)")
     };
+
 
     $scope.firebase.on('value', function(snapshot) {
         $scope.$apply();
@@ -198,6 +211,12 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
             var marker = new google.maps.Marker({
                 position: {lat: data.val().latitude, lng: data.val().longitude},
                 map: map
+            });
+            var contentString = "<div><a ui-sref='"+data.val().url+"'>"+data.val().Name+"</a></div><p>"+data.val().description+"</p>";
+            var compiled = $compile(contentString)($scope);
+
+            var infowindow = new google.maps.InfoWindow({
+                content: compiled[0]
             });
         });
 
