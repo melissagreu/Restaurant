@@ -40,12 +40,21 @@ a {
 
 
 
+
 /*RESTO1*/
 
 .rowphoto{
 	height: 49%;
 	background:url('../img/takayala.png') no-repeat center ;
 }
+
+.rowphoto2{
+	height: 49%;
+	background:url('../img/burgerrest.jpg') no-repeat center ;
+	background-size: cover;
+}
+
+
 
 .adresse > p{
 	text-shadow: 0 0 0.2em #000, 0 0 0.2em #000,

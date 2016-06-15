@@ -41,6 +41,10 @@ var app = angular.module('starter', ['ionic'])
         url:'/resto1',
         templateUrl:'templates/resto1.html'
     })
+    $stateProvider.state('resto2',{
+        url:'/resto2',
+        templateUrl:'templates/resto2.html'
+    })
     $stateProvider.state('ambiance',{
         url:'/ambiance',
         templateUrl:'templates/ambiance.html'
@@ -49,6 +53,14 @@ var app = angular.module('starter', ['ionic'])
     $stateProvider.state('japonais',{
         url:'/japonais',
         templateUrl:'templates/japonais.html'
+    })
+    $stateProvider.state('burger',{
+        url:'/burger',
+        templateUrl:'templates/burger.html'
+    })
+    $stateProvider.state('gastronomique',{
+        url:'/gastronomique',
+        templateUrl:'templates/gastronomique.html'
     })
 
     $stateProvider.state('map',{

@@ -88,6 +88,11 @@
         background: url('../img/restoJapp.jpg') no-repeat center;
         background-size: cover;
     }
+.imgRestaurantBurg {
+    height: 35vh;
+    background: url('../img/burgerrest.jpg') no-repeat center;
+    background-size: cover;
+}
     .imgRestaurant2 {
         height: 35vh;
         background: url('../img/sushibar.jpg') no-repeat center;
