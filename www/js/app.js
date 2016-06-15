@@ -77,7 +77,7 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
 
     $scope.firebase = new Firebase(FURLR);
     $scope.restos = {};
-    
+
    /* $scope.firebase.on('value', function(snapshot) {
         $scope.$apply();
         $scope.restos = snapshot.val();
@@ -164,10 +164,23 @@ app.controller("MapController", function($scope, $ionicLoading, $compile, FURL, 
             showBackdrop: false
         });
         navigator.geolocation.getCurrentPosition(function(pos) {
+            $scope.latpos = pos.coords.latitude;
+            $scope.lngpos = pos.coords.longitude;
             $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
             $ionicLoading.hide();
+            var myMarker = new google.maps.Marker({
+                position: $scope.map.getCenter(),
+                map: $scope.map,
+                animation: google.maps.Animation.DROP,
+                icon: "../img/pointbleu.png"
+            });
         }, function(error) {
             alert('Unable to get location: ' + error.message);
+        });
+        var contentString = "<div><p>Vous êtes ici</p></div>";
+        var compiled = $compile(contentString)($scope);
+        var infowindow = new google.maps.InfoWindow({
+            content: compiled[0]
         });
     };
 
